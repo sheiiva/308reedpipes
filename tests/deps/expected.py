@@ -20,3 +20,33 @@ DESCRIPTION\n\
 \tr15\tradius (in cm) of pipe at the 15cm abscissa\n\
 \tr20\tradius (in cm) of pipe at the 20cm abscissa\n\
 \tn\tnumber of points needed to display the radius\n"
+
+NORMAL_CASE_1 = "\
+vector result: [0.0, 0.0, 0.0, 0.2, 0.0]\n\
+abscissa: 0.0 cm\tradius: 1.5 cm\n\
+abscissa: 2.0 cm\tradius: 1.7 cm\n\
+abscissa: 4.0 cm\tradius: 1.9 cm\n\
+abscissa: 6.0 cm\tradius: 2.1 cm\n\
+abscissa: 8.0 cm\tradius: 2.1 cm\n\
+abscissa: 10.0 cm\tradius: 2.0 cm\n\
+abscissa: 12.0 cm\tradius: 1.8 cm\n\
+abscissa: 14.0 cm\tradius: 1.8 cm\n\
+abscissa: 16.0 cm\tradius: 2.4 cm\n\
+abscissa: 18.0 cm\tradius: 3.5 cm\n\
+abscissa: 20.0 cm\tradius: 5.0 cm\n"
+
+NORMAL_CASE_2 = "\
+vector result: [0.0, -0.2, 0.3, -0.1, 0.0]\n\
+abscissa: 0.0 cm\tradius: 2.0 cm\n\
+abscissa: 1.7 cm\tradius: 2.6 cm\n\
+abscissa: 3.3 cm\tradius: 3.0 cm\n\
+abscissa: 5.0 cm\tradius: 3.0 cm\n\
+abscissa: 6.7 cm\tradius: 2.6 cm\n\
+abscissa: 8.3 cm\tradius: 2.2 cm\n\
+abscissa: 10.0 cm\tradius: 2.0 cm\n\
+abscissa: 11.7 cm\tradius: 2.4 cm\n\
+abscissa: 13.3 cm\tradius: 3.2 cm\n\
+abscissa: 15.0 cm\tradius: 4.0 cm\n\
+abscissa: 16.7 cm\tradius: 4.5 cm\n\
+abscissa: 18.3 cm\tradius: 4.8 cm\n\
+abscissa: 20.0 cm\tradius: 5.0 cm\n"
