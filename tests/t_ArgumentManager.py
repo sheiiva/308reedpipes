@@ -44,6 +44,17 @@ def test_not_a_digit(capsys):
     assert redir.out == 'ERROR: a not a digit.\n'
 
 
+def test_last_float(capsys):
+
+    argMan = ArgumentManager()
+
+    argv = ['./308reedpipes', '1.0', '2', '2', '2', '5', '2.3']
+    assert argMan.checkArgs(argv) == 84
+
+    redir = capsys.readouterr()
+    assert redir.out == 'ERROR: 2.3 not an integer.\n'
+
+
 def test_negative_arg(capsys):
 
     argMan = ArgumentManager()
