@@ -16,7 +16,22 @@ class ArgumentManager():
         Check for input arguments validity.
         """
 
-        return 0
+        def isFloat(var) -> bool:
+            try:
+                float(var)
+            except ValueError:
+                return False
+            else:
+                return True
+
+        if len(argv) != 7:
+            print('ERROR: wrong number of arguments.')
+            return 84
+        for arg in argv[1:]:
+            if isFloat(arg) is False:
+                print(f'ERROR: {arg} not a digit.')
+                return 84
+
 
     def needHelp(self, argv) -> bool:
 

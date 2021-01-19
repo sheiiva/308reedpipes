@@ -4,7 +4,7 @@
 #                                          #
 #           COUTRET-ROZET Corentin         #
 #                                          #
-#           Project : 301dannon            #
+#           Project : 308reedpipes         #
 #                                          #
 ############################################
 
@@ -13,48 +13,35 @@ import pytest
 from sources.ArgumentManager import ArgumentManager
 
 
-def test_ok_1_arguments(capsys):
+def test_normal_case():
 
     argMan = ArgumentManager()
 
-    argv = ['./303make', 'Makefile']
+    argv = ['./308reedpipes', '1.5', '2', '2', '2', '5', '11']
 
-    assert argMan.checkArgs(argv) == 0
-
-
-def test_ok_2_arguments(capsys):
-
-    argMan = ArgumentManager()
-
-    argv = ['./303make', 'Makefile', 'arg']
-
-    assert argMan.checkArgs(argv) == 0
+    assert argMan.checkArgs(argv) != 84
 
 
-def test_ko_wrong_nb_args(capsys):
+def test_wrong_number_args(capsys):
 
     argMan = ArgumentManager()
 
-    argv = ['./303make']
-
+    argv = ['./308reedpipes', '2', '2', '2', '5', '11']
     assert argMan.checkArgs(argv) == 84
-    stdout, _ = capsys.readouterr()
 
-    excepted = "Wrong number of arguments.\n"
-    assert stdout == excepted
+    redir = capsys.readouterr()
+    assert redir.out == 'ERROR: wrong number of arguments.\n'
 
 
-def test_ko_arg_not_a_file(capsys):
+def test_not_a_digit(capsys):
 
     argMan = ArgumentManager()
 
-    argv = ['./303make', 'notFile', 'arg']
-
+    argv = ['./308reedpipes', 'a', '2', '2', '2', '5', '11']
     assert argMan.checkArgs(argv) == 84
-    stdout, _ = capsys.readouterr()
 
-    excepted = "{} is not a valid file.\n".format(argv[1])
-    assert stdout == excepted
+    redir = capsys.readouterr()
+    assert redir.out == 'ERROR: a not a digit.\n'
 
 
 def test_needHelp_h():
