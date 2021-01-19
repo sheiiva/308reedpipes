@@ -45,12 +45,12 @@ class ReedPipes():
 
         data = []
 
-        A = 6 * (self._rs[2] - 2 * self._rs[1] + self._rs[0]) / 50
-        B = 6 * (self._rs[3] - 2 * self._rs[2] + self._rs[1]) / 50
-        C = 6 * (self._rs[4] - 2 * self._rs[3] + self._rs[2]) / 50
-        self._vector[2] = (B -(A + C) / 4) * 4 / 7
-        self._vector[3] = C / 2 - 0.25 * self._vector[2] ## SIMPLIFY
-        self._vector[1] = A / 2 - 0.25 * self._vector[2] ## SIMPLIFY
+        A = 6 * (self._rs[2] - 2*self._rs[1] + self._rs[0]) / 50
+        B = 6 * (self._rs[3] - 2*self._rs[2] + self._rs[1]) / 50
+        C = 6 * (self._rs[4] - 2*self._rs[3] + self._rs[2]) / 50
+        self._vector[2] = (B - (A + C) / 4) * 4 / 7
+        self._vector[3] = (C*2 - self._vector[2])/4
+        self._vector[1] = (A*2 - self._vector[2])/4
 
         for i in range(self._n):
             imean = mean(20, self._n-1, i) if i < self._n-1 else 20
