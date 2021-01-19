@@ -31,6 +31,9 @@ class ArgumentManager():
             if isFloat(arg) is False:
                 print(f'ERROR: {arg} not a digit.')
                 return 84
+            elif float(arg) < 0:
+                print(f'ERROR: {float(arg)} is negative.')
+                return 84
 
 
     def needHelp(self, argv) -> bool:
