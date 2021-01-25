@@ -25,10 +25,10 @@ class ArgumentManager():
             if isFloat(arg) is False:
                 print(f'ERROR: {arg} not a digit.')
                 return 84
-            elif float(arg) < 0:
+            elif float(arg) <= 0:
                 print(f'ERROR: {float(arg)} is negative.')
                 return 84
-        if isInt(argv[-1]) is False:
+        if isInt(argv[-1]) is False or int(argv[-1]) <= 0:
             print(f'ERROR: {argv[-1]} not an integer.')
             return 84
 
